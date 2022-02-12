@@ -48,6 +48,15 @@ module.exports = config({
         link: "/ssh/",
       },
       {
+        text: "Security",
+        icon: "fas fa-shield-alt",
+        link: "#",
+        items: [
+          { text: "Passwords", link: "/security/passwords/" },
+          { text: "SSH Keys", link: "/security/ssh/" },
+        ],
+      },
+      {
         text: "LEMP",
         icon: "fab fa-php",
         link: "/lemp/",
