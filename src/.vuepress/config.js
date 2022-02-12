@@ -43,6 +43,11 @@ module.exports = config({
       { text: "Home", link: "/", icon: "fas fa-home" },
       { text: "Intro", link: "/intro/", icon: "fab fa-linux" },
       {
+        text: "SSH",
+        icon: "fas fa-terminal",
+        link: "/ssh/",
+      },
+      {
         text: "LEMP",
         icon: "fab fa-php",
         link: "/lemp/",
@@ -55,7 +60,7 @@ module.exports = config({
     ],
 
     sidebar: "auto",
-     anchorDisplay: false,
+    anchorDisplay: false,
     footer: {
       display: false,
       content: "",
