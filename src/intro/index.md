@@ -71,12 +71,12 @@ De herkansing is in de vorm van 100% schriftelijk examen met multiple choice vra
 
 In de praktijk ga je altijd met servers op afstand werken, deze kunnen van een cloud provider zijn, in een datacenter of een in-house dataroom. Voor de beste real-life experience van deze cursus voorzien we voor elke student een Cloud VM gesponsord door [SIN (Student Information Network)](https://sinners.be/). Deze VMs draaien op de StuVM cluster in P230 op campus Geel.
 
-INSERT RACK PICTURE HERE
+![Server Rack](./rack.jpg)
 
 Je VM heeft 4GB RAM, 50 GB HDD, 4 CPU cores als ook een verbinding naar buiten en een mogelijkheid HTTP en HTTPS verkeer naar de buitenwereld te brengen. Hiervoor heb je een eigen subdomein in de vorm van `r<studentnummer>.stuvm.be`.
 Elke VM heeft een intern IP dit heeft SSH mogelijkheden om je server te bereiken. Je kan dit IP samen met de login terugvinden op Canvas. Deze interne IPs vereisen het gebruik van een VPN, dit kan je ook op Canvas terugvinden. Deze VMs zijn 24/7 beschikbaar, we gaan deze doorheen heel de cursus gebruiken om onze services op te zetten die ook meteen voor de buitenwereld beschikbaar zijn (zo kan je elke dag thuiskomen en stoefen met je voortgang van deze les!).
 
-Je VM beheren kan je best via SSH doen, alle info vind je verder in deze cursus en op Canvas. Je kan ook de VM self via [Proxmox](https://proxmox.stuvm.ne/) beheren, hier kan je gewoon inloggen met je studenten account (kies voor de realm optie `ThomasMore`).
+Je VM beheren kan je best via SSH doen, alle info vind je verder in deze cursus en op Canvas. Je kan ook de VM self via [Proxmox](https://proxmox.stuvm.be/) beheren, hier kan je gewoon inloggen met je studenten account (kies voor de realm optie `ThomasMore`).
 
 Heb je problemen met StuVM? Neem dan contact op met Maartje Eyskens (MS Teams, Email, Discord of FAX).
 
@@ -84,12 +84,19 @@ _Alle activiteiten op de VMs vallen onder de algemeene voorwarden van SIN alsook
 
 ### In geval van nood: VM resetten
 
-TODO
+Je VM onherstelbaar beschadigd? Je kan makkelijk Ubuntu opnieuw laten installeren via de [Proxmox](https://proxmox.stuvm.be/) interface.
+
+1. Log in op de Proxmox interface
+2. Selecteer je VM
+3. Selecteer Console
+   ![Conosle](./console.png)
+4. Bovenaan naast "Shutdown" klik op het pijltje en kies "Reset"
+5. Dit restart je server, als je het Proxmox BIOS logo ziet in de VM druk op ESC, dit opent het boot menu
+   ![Boot Menu](./boot.png)
+6. Kies optie 2 voor de DVD boot door het nummer 2 van je toetsenbord te drukken
+7. De Ubuntu installatie start nu op. Op StuVM gebruiken we een auto installer DVD image die zonder enige interactie Ubuntu installeert en herstart, dit duurt ongeveer 15 minuten daarna start de VM opnieuw op in Ubuntu Server.
+   ![Ubuntu Installer](./installer.png)
 
 ### Fallback: lokale Ubuntu Server VMs op je laptop
 
 Heb je voor een redene van een lokale server nodig? Dan kan je een gewone Ubuntu installatie in VirtualBox gebruiken. [Deze tutorial](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/) kan je erbij helpen. Wil je poorten openzetten dan raden we je ook aan om de [Virtualbox networking guide](https://www.nakivo.com/blog/virtualbox-network-setting-guide/) te volgen.
-
-## Slides
-
-Hier vind je de bijbehorende [slides](./slides/).
