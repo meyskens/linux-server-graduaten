@@ -84,7 +84,18 @@ _Alle activiteiten op de VMs vallen onder de algemeene voorwarden van SIN alsook
 
 ### In geval van nood: VM resetten
 
-TODO
+Je VM onherstelbaar beschadigd? Je kan makkelijk Ubuntu opnieuw laten installeren via de [Proxmox](https://proxmox.stuvm.be/) interface.
+
+1. Log in op de Proxmox interface
+2. Selecteer je VM
+3. Selecteer Console
+   ![Conosle](./console.png)
+4. Bovenaan naast "Shutdown" klik op het pijltje en kies "Reset"
+5. Dit restart je server, als je het Proxmox BIOS logo ziet in de VM druk op ESC, dit opent het boot menu
+   ![Boot Menu](./boot.png)
+6. Kies optie 2 voor de DVD boot door het nummer 2 van je toetsenbord te drukken
+7. De Ubuntu installatie start nu op. Op StuVM gebruiken we een auto installer DVD image die zonder enige interactie Ubuntu installeert en herstart, dit duurt ongeveer 15 minuten daarna start de VM opnieuw op in Ubuntu Server.
+   ![Ubuntu Installer](./installer.png)
 
 ### Fallback: lokale Ubuntu Server VMs op je laptop
 
