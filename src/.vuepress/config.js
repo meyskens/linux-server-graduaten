@@ -53,7 +53,7 @@ module.exports = config({
         link: "#",
         items: [
           { text: "Passwords", link: "/security/passwords/" },
-          { text: "SSH Keys", link: "/security/ssh/" },
+          { text: "SSH Keys", link: "/security/ssh-keys/" },
         ],
       },
       {
