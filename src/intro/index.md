@@ -31,6 +31,8 @@ Onder sommige hoofdstukken kan je ook slides vinden die in de les gebruikt waren
 
 ::: warning note
 Deze cursus is nog vollop in aanbouw, hoofdstukken zullen in de loop van dit semester uitgebeid en toegevoegd worden.
+
+In spirit van open source, deze cursus is beschikbaar op GitHub! Bijdragen altijd welkom op [https://github.com/meyskens/linux-server-graduaten](https://github.com/meyskens/linux-server-graduaten)
 :::
 
 ### Lessen
