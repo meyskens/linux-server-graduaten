@@ -1,6 +1,9 @@
 ﻿# Remote access via SSH
-
-In praktijk gaan we voor aan een server te werken zelden of nooit fysieke toegang hebben tot onze server. Deze kan zich bevinden in een dataroom verweg in het gebouw of zelfs de andere kant van de wereld. Met dat meeste bedrijven gebruik maken van de cloud is er zelfs weinig bekend waar deze server draait.
+ 
+ 
+Wanneer we in de praktijk werken uitvoeren aan een server zullen we zelden of nooit fysieke toegang hebben tot onze server.
+Deze kan zich bevinden in een dataroom verweg in een gebouw of zelfs aan de andere kant van de wereld.
+Omdat de meeste bedrijven gebruik maken van de cloud is er zelfs weinig bekend waar deze server draait.
 
 Kortom we hebben een veilige manier nodig om onze servers te kunenn configureren en beheren. Uit de lessen netwerken ken je onwaarschijnlijk Telnet en SSH al. In de Linux wereld word er meestal uitsluitend gebruik gemaakt van SSH. SSH heeft vooral zijn populariteit door de goede beveiliging van het protocol. Maar bied ook handige functies aan zoals: versturen van bestanden, doorsturen van netwerkverkeer en meer.
 
@@ -236,7 +239,7 @@ Disconnected from invalid user janne 111.229.235.119 port 57154 [preauth]
 
 Botnets scannen constant naar SSH-servers om alle mogelijke wachtwoorden uit te testen. Waarom is de kans groot dat ze binnen geraken? [Dit bekijken we in het hoofdstuk Password Security](/security/passwords)
 
-Hoe krijgen we dan wel een SSH-server veilig op het internet? We gaan [SSH Keys gebruiken](/security/ssh-keys).z
+Hoe krijgen we dan wel een SSH-server veilig op het internet? We gaan [SSH Keys gebruiken](/security/ssh-keys).
 
 ## The next generation: MOSH
 
