@@ -13,10 +13,10 @@ HTTP draait op TCP en gebruikt poort `80`. Het is het standaard protocol in onze
 ### HTTP Request
 
 Voor we ingaan op een HTTP server op te zetten gaan we eens zien hoe een typische HTTP request eruit ziet.
-We gebruiken het Linux programma `curl` om een HTTP request te maken. cURL laat ons toe vanuit de command like HTTP requests te maken, we gaan ook optie `-vvv` gebruiken om de verbose logging te zien on zo meer te leren over HTTP.
+We gebruiken het Linux programma `curl` om een HTTP request te maken. cURL laat ons toe vanuit de command like HTTP requests te maken, we gaan ook optie `-v` gebruiken om de verbose logging te zien on zo meer te leren over HTTP.
 
 ```bash
-curl -vvv http://simple-http.stuvm.be
+curl -v http://simple-http.stuvm.be
 ```
 
 We krijgen de volgende response van onze server:
@@ -120,13 +120,13 @@ Nu we weten dat onze server draait kunnen we hem eens bekijken. We hebben hierbo
 Op de server zelf voeren we het volgende uit:
 
 ```bash
-curl -vvv http://localhost
+curl -v http://localhost
 ```
 
 We merken dat we een antwoord krijgen met een "Welcome to NGINX" webpagina.
 
 ```
-$ curl -vvv http://localhost
+$ curl -v http://localhost
 *   Trying 127.0.0.1:80...
 * TCP_NODELAY set
 * Connected to localhost (127.0.0.1) port 80 (#0)
