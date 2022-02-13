@@ -59,7 +59,10 @@ module.exports = config({
       {
         text: "LEMP",
         icon: "fab fa-php",
-        link: "/lemp/",
+        items: [
+          { text: "Intro", link: "/lemp/" },
+          { text: "NGINX", link: "/lemp/nginx/" },
+        ],
       },
       {
         text: "Canvas LMS",
