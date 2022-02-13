@@ -58,6 +58,11 @@ LAMP staat voor:
 LAMP is een schoolvoorbeeld van een stack, en ongetwijfeld een van de meest populaire stacks.
 Apache hier is de webserver die HTTP requests verwerkt. MySQL is databases die je data opslaat en SQL queries mogelijk maakt. Na overname van MySQL door Oracle kende de fork van MySQL MariaDB meer en meer populariteit (we bekijken dit in het hoofdstuk databases. PHP is onze taal die onze dynamische webpages gaat maken.
 
+### Apache
+
+De Apache HTTP Server is een open-source cross-platform web server dat ook gekend is als “httpd’ en gewoon "Apache".
+De Apache Software Foundation is verantwoordelijk voor de benamingen en dienstverlening van Apache. De software wordt ontwikkeld en onderhouden door de open-source community met tal van ontwikkelaars. Apache is meestal gebruikt op het Linux-platform, en zorgt voor het mogelijk maken van vrijwel 30% van alle websites ter wereld[^stats]. In December 2020 was dit 36% en in december 2019 was dit 41%.
+
 ### LEMP
 
 ![lemp](./lemp.png)[^lempimagesource]
@@ -79,7 +84,6 @@ Een klein verschil om nog aan te halen gaat over de programmeertaal in een stack
 ![diagram](./cgi.png)
 
 Vele (vaak moderne) applicaties onvervinden traagheid doordat de webserver elke keer de file moet lezen, code comilen en uitvoeren. Of de applicatie werkt met real-time data (neem bijvoorbeeld een chat applicatie) en moet achtergrond processen kunnen draaien. Deze werken dan vaak met een "standalone" server. De code zelf bevat een HTTP server die de requests verwerkt. Dit proces draait dan net als NGINX en MariaDB op onze server als een "service". Vaak draait NGINX nog voor deze server voor HTTPS af te handelen of om de applicatie geen root privileges te moeten geven (soms ook voor caching etc.).
-
 Voorbeeld is de MEAN stack die een web server draait met de code erin met ExpressJS.
 
 [^stats]: [Cijfers van w3tech.com](https://w3techs.com/technologies/overview/web_server)
