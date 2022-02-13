@@ -83,6 +83,7 @@ module.exports = config({
     },
 
     git: {
+      contributor: true,
       timezone: "Europe/Brussels",
     },
 
