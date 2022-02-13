@@ -1,4 +1,6 @@
-FROM --platform=$BUILDPLATFORM node:16 as frontend
+FROM --platform=$BUILDPLATFORM node:16-alpine as frontend
+
+RUN apk add --no-cache git
 
 COPY ./ /go/src/github.com/meyskens/linux-server-graduaten
 COPY ./.git /go/src/github.com/meyskens/linux-server-graduaten/.git
