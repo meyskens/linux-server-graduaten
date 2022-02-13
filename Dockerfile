@@ -1,6 +1,7 @@
 FROM --platform=$BUILDPLATFORM node:16 as frontend
 
 COPY ./ /go/src/github.com/meyskens/linux-server-graduaten
+COPY ./.git /go/src/github.com/meyskens/linux-server-graduaten/.git
 
 WORKDIR /go/src/github.com/meyskens/linux-server-graduaten
 
