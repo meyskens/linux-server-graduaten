@@ -102,3 +102,9 @@ Je VM onherstelbaar beschadigd? Je kan makkelijk Ubuntu opnieuw laten installere
 ### Fallback: lokale Ubuntu Server VMs op je laptop
 
 Heb je voor een redene van een lokale server nodig? Dan kan je een gewone Ubuntu installatie in VirtualBox gebruiken. [Deze tutorial](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/) kan je erbij helpen. Wil je poorten openzetten dan raden we je ook aan om de [Virtualbox networking guide](https://www.nakivo.com/blog/virtualbox-network-setting-guide/) te volgen.
+
+## Linux Server: The Next Generation
+
+De inhoud van de cursus is gebaseerd op de meest populaire technologieën op het moment. Toch blikken we graag al eens vooruit naar de toekomst. Ik vele hoofdstukken spreken we over "Next Generation" technologieën, deze zien we waarschijnlijk binnen vele jaren terug in de opleiding en worden meer en meer geadopteerd in het bedrijfsleven.
+
+Deze delen zijn ter informatie en maken geen deel uit van de cursus.
