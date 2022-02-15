@@ -54,6 +54,7 @@ module.exports = config({
         items: [
           { text: "Passwords", link: "/security/passwords/" },
           { text: "SSH Keys", link: "/security/ssh-keys/" },
+          { text: "UFW", link: "/security/ufw/" },
         ],
       },
       {
