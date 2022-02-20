@@ -63,7 +63,17 @@ module.exports = config({
         items: [
           { text: "Intro", link: "/lemp/" },
           { text: "NGINX", link: "/lemp/nginx/" },
+          // { text: "MariaDB", link: "/lemp/mariadb/" },
+          // { text: "PHP", link: "/lemp/php/" },
+          // { text: "Wordpress", link: "/lemp/wordpress/" },
+          // { text: "Load Testing", link: "/lemp/load/" },
         ],
+      },
+      {
+        text: "Services",
+        icon: "fas fa-server",
+        link: "#",
+        items: [{ text: "Systemd", link: "/services/systemd/" }],
       },
       {
         text: "Canvas LMS",
@@ -77,10 +87,6 @@ module.exports = config({
     footer: {
       display: false,
       content: "",
-    },
-
-    copyright: {
-      status: "local",
     },
 
     git: {
