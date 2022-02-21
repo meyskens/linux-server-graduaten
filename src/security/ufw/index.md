@@ -42,7 +42,7 @@ sudo apt install ufw
 We bekijken nu of UFW actief is:
 
 ```bash
-sudo systemctl ufw status
+sudo systemctl status ufw
 ```
 
 We krijgen nu normaal dat onze service "active" is van systemd.
