@@ -364,6 +364,7 @@ Gebruikers toevoegen doen we met `CREATE USER`:
 
 ```sql
 CREATE USER 'test'@'%' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
 ```
 
 `'test'@'%'` betekend dat de gebruiker `test` zal kunnen inloggen op alle hosts (`%`). Met `IDENTIFIED BY` geeft we de gebruiker een password.
