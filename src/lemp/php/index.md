@@ -23,7 +23,7 @@ We installeren PHP-FPM via `apt`:
 
 ```bash
 sudo apt update
-sudo apt install php7.4-fpm php7.4-php-mysql
+sudo apt install php7.4-fpm php7.4-mysql
 ```
 
 We installeren PHP versie 7.4, de hoogste versie in Ubuntu 20.04. We kunnen zo ook andere versies installeren.
