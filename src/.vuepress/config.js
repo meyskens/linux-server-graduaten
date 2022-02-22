@@ -65,7 +65,7 @@ module.exports = config({
           { text: "NGINX", link: "/lemp/nginx/" },
           { text: "MariaDB", link: "/lemp/mariadb/" },
           { text: "PHP", link: "/lemp/php/" },
-          // { text: "Wordpress", link: "/lemp/wordpress/" },
+          { text: "Wordpress", link: "/lemp/wordpress/" },
           // { text: "Load Testing", link: "/lemp/load/" },
         ],
       },
