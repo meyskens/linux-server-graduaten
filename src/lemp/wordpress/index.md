@@ -25,6 +25,10 @@ NGINX:
 - Voorzie de map `/var/www/wordpress` (TIP: Permissions!)
 - Zet alle nodige WordPress bestanden in deze map.
 
+PHP:
+
+- Voorzie een upload limiet van 1GB
+
 WordPress:
 
 - Installeer WordPress
@@ -54,3 +58,6 @@ location / {
 ```
 
 [^wpstats]: https://w3techs.com/technologies/overview/content_management
+
+PHP heeft 2 limieten voor het uploaden van bestanden: `upload_max_filesize` en `post_max_size`. Technisch gezien is de laatste voor heel het "formulier", deze moet groter of gelijk zijn aan de eerste.
+NGINX heeft ook een upload limiet, `client_max_body_size 100m;`. Deze kan staan in het `http`, `server` of `location` blok.
