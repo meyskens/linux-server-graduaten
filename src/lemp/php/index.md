@@ -43,6 +43,7 @@ We hebben hier een aantal bestanden die we kunnen bekijken:
   - `memory_limit`: hier staat de maximale geheugenlimiet voor PHP.
   - `post_max_size`: hier staat de maximale grootte van een POST request.
   - `upload_max_filesize`: hier staat de maximale grootte van een upload.
+  - `extension=`: laat je PHP extenties inladen
 - `php-fpm.conf`: dit is het algemane configuratiebestand voor de PHP-FPM server.
 - `/pool.d/www.conf` bevat informatie over de "worker pool".
 
