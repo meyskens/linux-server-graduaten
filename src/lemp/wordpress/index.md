@@ -1,5 +1,7 @@
 # WordPress
 
+![logo](./logo.png)
+
 WordPress is een enorm populaire PHP applicatie. Gestart in 2003 als open source blogging systeem draait WordPress nu op 42.8% van de top 10 miljoen websites[^wpstats] of 65% van de websites die een CMS systeem gebruiken.
 
 WordPress word voor meer dan blogs gebruikt door flexibel uitbreidbaar te zijn met een groot plugin ecosystem. Van een simpele site tot een heel ecommerce platform WordPress kan het wel draaien. De kans dat je in het werkveld WordPress dus ergens tegenkomt is vrij groot.
