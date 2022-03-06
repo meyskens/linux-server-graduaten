@@ -73,7 +73,10 @@ module.exports = config({
         text: "Services",
         icon: "fas fa-server",
         link: "#",
-        items: [{ text: "Systemd", link: "/services/systemd/" }],
+        items: [
+          { text: "Systemd", link: "/services/systemd/" },
+          { text: "FTP", link: "/services/ftp/" },
+        ],
       },
       {
         text: "Canvas LMS",
