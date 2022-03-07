@@ -30,7 +30,7 @@ Hoe gegbuiken we nu FTP op onze laptop? Er zijn een aantal mogelijke programmas:
 
 - [FileZilla](https://filezilla-project.org/) - een grote, gratis en open source FTP client voor Windows, Mac en Linux.
 - [WinSCP](https://winscp.net/) - een gratis FTP client voor Windows.
-- [Cyberduck](http://cyberduck.io/) - een gratis FTP client voor Mac met support voor vele andere protocollen.
+- [Cyberduck](http://cyberduck.io/) - een gratis FTP client voor Mac en Windows met support voor vele andere protocollen.
 
 ## FTPS met VSFTPD
 
