@@ -225,7 +225,7 @@ sudo apt install build-essential libssl-dev git zlib1g-dev
 Hiermee installeren we de benodigde software om C-code te compileren als ook een paar libraries die wrk2 gebruikt.
 
 ```bash
-mkdir –p ~/src && cd ~/src
+mkdir ~/src && cd ~/src
 git clone https://github.com/kinvolk/wrk2.git
 cd wrk2
 ```
