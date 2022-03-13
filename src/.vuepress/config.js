@@ -80,6 +80,14 @@ module.exports = config({
         ],
       },
       {
+        text: "Docker",
+        icon: "fab fa-docker",
+        items: [
+          { text: "Docker", link: "/docker/docker/" },
+          { text: "Docker Compose", link: "/docker/compose/" },
+        ],
+      },
+      {
         text: "Canvas LMS",
         link: "https://thomasmore.instructure.com/courses/21437",
         icon: "fas fa-book",
