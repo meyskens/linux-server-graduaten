@@ -76,6 +76,7 @@ module.exports = config({
         items: [
           { text: "Systemd", link: "/services/systemd/" },
           { text: "FTP", link: "/services/ftp/" },
+          { text: "DNS", link: "/services/dns/" },
         ],
       },
       {
