@@ -8,7 +8,7 @@ Voor ons gaat Docker Compose ons helpen om het opzetten van verschillende Docker
 
 Docker Compose is een tool van Docker die de [compose specificatie](https://compose-spec.io/) ondersteunt. Deze specificatie is een open standaard geworden gebaseerd op [Docker Compose](https://docs.docker.com/compose/).
 
-Deze cursus maakt gebruik van Docker Compse v2, op het moment dat deze cursus geschreven is was deze versie 16 dagen oud.
+Deze cursus maakt gebruik van Docker Compse v2.
 Versie 2 is een verbeterde versie van V1, maar heeft vele verschillen.
 Versie 1 is geschreven in Python en had het apparte commando `docker-compose`. Versie 2 is nu geschreven in Go (net als Docker) en is een plugin voor Docker zelf met het commando `docker compose`. Let hierbij goed op wanneer je informatie gaat opzoeken!
 
@@ -42,42 +42,42 @@ Wij schrijven al onze files in versie 3.x, versie 2.0 zien we nog vaak terugkome
 
 De `docker-compose.yml` file heeft 3 hoofdonderdelen:
 
--   `version`: Versie van de compose file
--   `services`: De containers die moeten draaien
--   `networks`: De networks die aangemaakt moeten worden
--   `volumes`: De volumes die gebruikt moeten worden
+- `version`: Versie van de compose file
+- `services`: De containers die moeten draaien
+- `networks`: De networks die aangemaakt moeten worden
+- `volumes`: De volumes die gebruikt moeten worden
 
 Dit is een voorbeeld van een Docker Compose file van de Wordpress setup van vorige week.
 
 ```yaml
 version: "3.9"
 networks:
-    wordpress: {}
+  wordpress: {}
 
 volumes:
-    db-data: {}
+  db-data: {}
 
 services:
-    wordpress:
-        image: wordpress:latest
-        restart: always
-        ports:
-            - "80:80"
-        depends_on:
-            - db
-        networks:
-            - wordpress
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    networks:
+      - wordpress
 
-    db:
-        image: mariadb:latest
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: test
-            MYSQL_DATABASE: wordpress
-        volumes:
-            - db-data:/var/lib/mysql
-        networks:
-            - wordpress
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - wordpress
 ```
 
 We bekijken even elk onderdeel:
@@ -90,14 +90,14 @@ We gebruiken versie 3.9 van de Compose specificatie. Wat hier inzit kan je allem
 
 ```yaml
 networks:
-    wordpress: {}
+  wordpress: {}
 ```
 
 Dit is een lijst van netwerken die we nodig hebben binnen Docker, die deden we manueel met `docker network create`. We hebben verder geen configuratie nodig dus geven we een leeg object mee namelijk `{}`. Dit kan ook weggelaten worden maar dat is minder duidelijk.
 
 ```yaml
 volumes:
-    db-data: {}
+  db-data: {}
 ```
 
 Dit lijkt heel erg op wat we met networks deden, dit doet bijna hetzelfde voor volumes.
@@ -105,31 +105,31 @@ Waar we vorige les vooral onze bestanden in een eigen map gaan plaatsen zeggen w
 
 ```yaml
 services:
-    wordpress:
-        image: wordpress:latest
-        restart: always
-        ports:
-            - "80:80"
-        depends_on:
-            - db
-        networks:
-            - wordpress
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    networks:
+      - wordpress
 ```
 
 Al onze containers zijn Services. In Docker Compose spreken we meestal over meerdere containers. Deze hebben allemaal een naam en eigenschappen. Hier defineren we de containers dat onze container image `wordpress` nodig heeft, poort 80 moet exposen en netwerk `wordpress` gebruikt. `depends_on is nieuw, dit laat Docker Compose bepalen welke containers eerst moeten starten. Zo gaat de database eerst gemaakt worden omdat WordPress daarmee gaat verbinden. Met `restart: always` stellen we in dat deze container ook moet starten na een reboot.
 
 ```yaml
 services:
-    db:
-        image: mariadb:latest
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: test
-            MYSQL_DATABASE: wordpress
-        volumes:
-            - db-data:/var/lib/mysql
-        networks:
-            - wordpress
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - wordpress
 ```
 
 Voor onze database zien we hetzelfde verhaal. Hier is enkel wel `environment` aan toegevoegd waarmee we onze environment variablen kunnen instellen, ook linken we `volumes` aan de map waar onze database staat.
@@ -142,18 +142,18 @@ Dit doen we door `build` te defenieren:
 
 ```yaml
 services:
-    my-container:
-        build: .
+  my-container:
+    build: .
 ```
 
 Moet je meerdere container images builden? Dat gaan ook, alleen moet je meer specifieren waar Docker de Dockerfile en bestanden kan vinden.
 
 ```yaml
 services:
-    my-container:
-        build:
-            context: ./dir
-            dockerfile: Dockerfile
+  my-container:
+    build:
+      context: ./dir
+      dockerfile: Dockerfile
 ```
 
 ## docker compose commando
@@ -222,11 +222,7 @@ Als je eigen images gebruikt en je deze wil updaten moet je `docker compose buil
 
 Vele projecten komen al met een basis compose file aanwezig. We gaan voor het project ook nog eigen compose files schrijven. Heb je echter inspiratie maken? Dan is [Awewome Compose](https://github.com/docker/awesome-compose) een goede referentie, hier zijn verschillende kant en klare stacks te vinden die je kan aanpassen!
 
-## Oefening
-
-We hebben in het hoofdstuk een eigen container image gemaakt en gestart. Zet deze in een docker-compose file die ook de image bouwt.
-
 ## References
 
--   Docker Compose file v3 https://docs.docker.com/compose/compose-file/compose-file-v3/#environment
--   Get started with Docker Compose https://docs.docker.com/compose/gettingstarted/
+- Docker Compose file v3 https://docs.docker.com/compose/compose-file/compose-file-v3/#environment
+- Get started with Docker Compose https://docs.docker.com/compose/gettingstarted/

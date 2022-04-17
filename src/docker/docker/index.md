@@ -10,7 +10,7 @@ Dit is wat gebeurd als je een introductie van Wikipedia wil kopiëren. Laten we 
 > kan je er `docker.stuvm.be/f/docker/` voorzetten. Dit download een kopie via het StuVM netwerk.
 
 Docker is vaak omschreven als een PaaS tool. Het gaat voor ons een platform bieden waar we onze apps kunnnen op draaien. Dat is een ruw idee van wat Docker is.
-Docker draait processen in een geisoleerde container op ons Linux systeem. Het maakt gebruik van Linux "cgroups" en "namespaces". Hierdoor kunnen we een hele Linux omgeving (of een deel ervan) gebruiken per applicatie.+
+Docker draait processen in een geisoleerde container op ons Linux systeem. Het maakt gebruik van Linux "cgroups" en "namespaces". Hierdoor kunnen we een hele Linux omgeving (of een deel ervan) gebruiken per applicatie.
 
 ![Architecture](./architecture.png)
 
@@ -19,11 +19,11 @@ Dit diagram van Aqua Security geeft het goed weer waar Docker zich bevind door h
 Docker deelt de Linux kernel onder de verschillende containers waar een VM enkel hardware deelt. De isolatie tussen 2 containers is dus minder dan tussen 2 VMs.
 Dit heeft een aantal voordelen:
 
--   Docker containers starten instantly, geen boot time
--   Docker containers zijn licht, ze hebben geen kernel
--   Docker containers zijn resource minder intensief ze gebruiken alleen de nodige delen van het OS
--   Docker containers kunnen we makkelijker hergebruiken door een kleine footprint (geen diskimage!)
--   Docker images zijn stateless
+- Docker containers starten instantly, geen boot time
+- Docker containers zijn licht, ze hebben geen kernel
+- Docker containers zijn resource minder intensief ze gebruiken alleen de nodige delen van het OS
+- Docker containers kunnen we makkelijker hergebruiken door een kleine footprint (geen diskimage!)
+- Docker images zijn stateless
 
 Let wel op dat dit ook impact heeft op security, de isolatie tussen 2 containers is niet perfect!
 
@@ -147,18 +147,18 @@ Het commando ziet er zo uit:
 docker run <opties> <naam image> [optioneel commando]
 ```
 
--   De image naam is verplicht, deze komt van je eigen images of Docker Hub (of andere). Een `:` duid een versie aan bv. `ubuntu:20.04` standaard is dit `latest`.
--   Het optioneel commando overschrijft het standaard commando dat in de image staat
+- De image naam is verplicht, deze komt van je eigen images of Docker Hub (of andere). Een `:` duid een versie aan bv. `ubuntu:20.04` standaard is dit `latest`.
+- Het optioneel commando overschrijft het standaard commando dat in de image staat
 
 Er zijn ook echter vele handige opties:
 
--   `-it` (eigenlijk `-i -t`) start de container in de interactive modus
--   `-d` start de container in de achtergrond
--   `-p` maakt een port mapping tussen je container en je host. Zo kan je poorten openzetten.
--   `-v` maakt een volume mapping tussen je container en je host. Zo kan je een map delen tussen host en container.
--   `-e` maakt een environment variabele aan.
--   `--name` stelt een naam in voor de container.
--   `--rm` verwijderd de container na het stoppen.
+- `-it` (eigenlijk `-i -t`) start de container in de interactive modus
+- `-d` start de container in de achtergrond
+- `-p` maakt een port mapping tussen je container en je host. Zo kan je poorten openzetten.
+- `-v` maakt een volume mapping tussen je container en je host. Zo kan je een map delen tussen host en container.
+- `-e` maakt een environment variabele aan.
+- `--name` stelt een naam in voor de container.
+- `--rm` verwijderd de container na het stoppen.
 
 Laten we dit even testen
 
@@ -393,8 +393,8 @@ We kunnen op elke Docker Image verder bouwen!
 
 We zien een heel populaire basis image van meeste Docker images. Namelijk [Alpine Linux](https://alpinelinux.org/). Voor Docker een vrij onpopulaire kleine Linux distributie. Maar ze heeft een een aantal goede voordelen:
 
--   `apk` is een makkelijke, snelle en lichte package manager
--   Sneller release cadence geeft snel nieuwe packages
+- `apk` is een makkelijke, snelle en lichte package manager
+- Sneller release cadence geeft snel nieuwe packages
 
 oh... bijna vergeten... de image is slechts 3 MEGABYTES groot! (vergeleken dat Ubuntu/Debian 300MB is)
 
@@ -435,10 +435,10 @@ RUN apt-get update && apt-get install -y nginx
 
 Wat is belangrijk hier:
 
--   input is niet mogelijk, werk dus altijd met `-y` in bijvoorbeeld apt-get
--   het is enkel tijdens `docker build` dus niet tijdens het draaien. Werk dus niet tijd of omgevings sensitieve data
--   gebruik **nooit** `service` of `systemctl`, dit werkt in Docker nooit* (* tenzij je heel rare containers gaat maken)
--   definieer altijd een versie van de image, zo breekt je build niet met een nieuwe release
+- input is niet mogelijk, werk dus altijd met `-y` in bijvoorbeeld apt-get
+- het is enkel tijdens `docker build` dus niet tijdens het draaien. Werk dus niet tijd of omgevings sensitieve data
+- gebruik **nooit** `service` of `systemctl`, dit werkt in Docker nooit* (* tenzij je heel rare containers gaat maken)
+- definieer altijd een versie van de image, zo breekt je build niet met een nieuwe release
 
 ##### Layer overload
 
@@ -497,8 +497,8 @@ COPY wordpress/ /var/www
 
 `ADD` doet hetzelfde als `COPY` alleen het kan:
 
--   `ADD https://example.com/file.txt /var/www/html/file.txt` URLs binnenhalen
--   `ADD src.tar.gz /usr/local/src` bestanden uit een tarball uitpakken
+- `ADD https://example.com/file.txt /var/www/html/file.txt` URLs binnenhalen
+- `ADD src.tar.gz /usr/local/src` bestanden uit een tarball uitpakken
 
 #### ENV
 
@@ -591,9 +591,9 @@ We hebbe nu een image kunnen maken. Om deze te delen en vooral ook om ze binnen 
 Een Registry gaat voor ons onze images hosten. We kunnen ze zowel private als public maken.
 Er zijn een aantal oplossingen
 
--   [Docker Hub](https://hub.docker.com/) was de eerste van Docker zelf, is gratis voor publieke images. Een image voor docker hub heeft het formaat `username/image:tag`
--   [Quay.io](https://quay.io) is een grote concurrent gehost door Red Hat (voorheen CoreOS). Het is voor publieke images en private images. Het formaat is `quay.io/username/image:tag`
--   [GitHub Container Registry](https://ghcr.io) is een recente toevoeging van GitHub zelf, is voor publieke images en private images mee geintegreerd in je GitHub repository. Het formaat is `ghcr.io/username/image:tag`
+- [Docker Hub](https://hub.docker.com/) was de eerste van Docker zelf, is gratis voor publieke images. Een image voor docker hub heeft het formaat `username/image:tag`
+- [Quay.io](https://quay.io) is een grote concurrent gehost door Red Hat (voorheen CoreOS). Het is voor publieke images en private images. Het formaat is `quay.io/username/image:tag`
+- [GitHub Container Registry](https://ghcr.io) is een recente toevoeging van GitHub zelf, is voor publieke images en private images mee geintegreerd in je GitHub repository. Het formaat is `ghcr.io/username/image:tag`
 
 #### Push
 
@@ -635,13 +635,13 @@ docker images # Toon alle images
 # Starten van containers
 docker run <image>
 
-dockr run <name -it # start de container in de interactive modus
-dockr run <name -d # start de container in de achtergrond
-dockr run <name -p src:dest # maakt een port mapping tussen je container en je host. Zo kan je poorten openzetten.
-dockr run <name -v src:dest # maakt een volume mapping tussen je container en je host. Zo kan je een map delen tussen host en container.
-dockr run <name -e # maakt een environment variabele aan.
-dockr run <name --name # stelt een naam in voor de container.
-dockr run <name --rm # verwijderd de container na het stoppen.
+dockr run <name> -it # start de container in de interactive modus
+dockr run <name> -d # start de container in de achtergrond
+dockr run <name> -p src:dest # maakt een port mapping tussen je container en je host. Zo kan je poorten openzetten.
+dockr run <name> -v src:dest # maakt een volume mapping tussen je container en je host. Zo kan je een map delen tussen host en container.
+dockr run <name> -e # maakt een environment variabele aan.
+dockr run <name> --name # stelt een naam in voor de container.
+dockr run <name> --rm # verwijderd de container na het stoppen.
 
 # Beheren van bestaande containers
 docker start <name>
@@ -666,10 +666,30 @@ docker network ls # toon alle netwerken
 
 Maak een Dockerfile aan op basis van `ubuntu` later een op basis van `alpine`. Noem ze respectievelijk `mijn-site-ubuntu` en `mijn-site-alpine`.
 
--   Installeer Apache
--   Kopieer een HTML pagina naar de web folder van de container
--   Laat Apache starten
-    -   op Alpine is dat `httpd -D FOREGROUND`
-    -   op Ubuntu is dat `apache2ctl -D FOREGROUND`
+- Installeer Apache
+- Kopieer een HTML pagina naar de web folder van de container
+- Laat Apache starten
+  - op Alpine is dat `httpd -D FOREGROUND`
+  - op Ubuntu is dat `apache2ctl -D FOREGROUND`
 
 Bekijk het verschil in bouwtijd en groote (via `docker images`).
+
+### Oefening 2:
+
+Maak een Dockerfile en zet een server op voor applicatie. De applicatie `chat-example` is een chat applicatie geschreven in Node.JS, en behoort tot de ME(A)N stack familie.
+
+Je kan de broncode [op GitHub terugvinden](https://github.com/socketio/chat-example).
+Developers geven de volgende specs mee:
+
+- Laatste versie van node.js nodig ([Docker Image](https://hub.docker.com/_/node))
+- Downloaden kan met `git clone https://github.com/socketio/chat-example.git`
+- Installatie van de dependencies doen we met `npm install`
+- Starten van de applicatie met `npm start`
+- Poort is 3000 (kan je veranderen met enviroment variabe `PORT`)
+
+Jouw opdracht:
+
+- Download de code
+- Voeg een Dockerile toe
+- Bouw een image
+- Draai de image op poort 8090, als dit draait bekijke de site op je laptop op http://IP Server:8090/
