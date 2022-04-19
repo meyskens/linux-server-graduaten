@@ -270,14 +270,14 @@ docker network create wp
 Dit maakt een nieuw netwerk aan met naam `wp`. Je kan het bekijken met `docker network ls`.
 
 ```bash
-docker run --rm -p 80:80 --name wp --net=wp -d wordpress
+docker run --rm -p 8081:80 --name wp --net=wp -d wordpress
 docker run --rm --name db -e MARIADB_DATABASE=wordpress -e MARIADB_ROOT_PASSWORD=test --net=wp -d mariadb
 ```
 
 Dit maakt een intern `wp` netwerk aan, waar we WordPress en MariaDB starten.
-WordPress krijgt poort 80 op onze server. MariaDB blijft intern.
+WordPress krijgt poort 8081 op onze server. MariaDB blijft intern.
 
-Als we nu `localhost` in onze browser openen krijgen we een WordPress installer.
+Als we nu `<ip address>:8081` in onze browser openen krijgen we een WordPress installer.
 
 ![WP Installer](./wp-installer.png)
 
