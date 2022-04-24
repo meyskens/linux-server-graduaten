@@ -62,7 +62,7 @@ services:
     image: wordpress:latest
     restart: always
     ports:
-      - "80:80"
+      - "8091:80"
     depends_on:
       - db
     networks:
@@ -185,9 +185,9 @@ Net als Docker zelf kunnen we ook `docker-compose up -d` gebruiken voor het opst
 
 ```bash
 $ docker ps
-CONTAINER ID   IMAGE              COMMAND                  CREATED       STATUS         PORTS                               NAMES
-ed81d91b7005   wordpress:latest   "docker-entrypoint.s…"   2 hours ago   Up 3 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   wordpress-wordpress-1
-3b3451265a84   mariadb:latest     "docker-entrypoint.s…"   2 hours ago   Up 4 seconds   3306/tcp                            wordpress-db-1
+CONTAINER ID   IMAGE              COMMAND                  CREATED       STATUS         PORTS                                 NAMES
+ed81d91b7005   wordpress:latest   "docker-entrypoint.s…"   2 hours ago   Up 3 seconds   0.0.0.0:8091->80/tcp, :::80->80/tcp   wordpress-wordpress-1
+3b3451265a84   mariadb:latest     "docker-entrypoint.s…"   2 hours ago   Up 4 seconds   3306/tcp                              wordpress-db-1
 ```
 
 In `docker ps` zien we nu dat de containers draaien. Ze hebben ook allemaal een naam gekregen met de mapnaam, naam van de container en het cijfer 1. We kunnen met Docker compose ook meerdere replicas van 1 container draaien als we dat willen.
