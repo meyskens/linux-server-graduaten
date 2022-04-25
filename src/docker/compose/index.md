@@ -181,7 +181,7 @@ docker compose up
 
 Dit start onze Wordpress omgeving op en we kunnen deze gaan bekijken met de browser.
 
-Net als Docker zelf kunnen we ook `docker-compose up -d` gebruiken voor het opstarten in de achtergrond. Docker start deze containers ook terug als de server reboot als `restart: always` in de file staat!
+Net als Docker zelf kunnen we ook `docker compose up -d` gebruiken voor het opstarten in de achtergrond. Docker start deze containers ook terug als de server reboot als `restart: always` in de file staat!
 
 ```bash
 $ docker ps
