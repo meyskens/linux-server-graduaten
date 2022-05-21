@@ -1,8 +1,11 @@
 const { config } = require("vuepress-theme-hope");
 
 module.exports = config({
+  plugins: ["vuepress-plugin-export"],
   title: "Linux Server",
   description: "Cursus Linux Server IT Graduaten Thomas More",
+
+  // theme: "@vuepress/default", // enable for PDF export
 
   dest: "./dist",
 
